@@ -6,6 +6,8 @@ import { downloadCanvasToImage, reader } from '../config/helpers';
 import { EditorTabs, FilterTabs, DecalTypes } from '../config/constants';
 import { fadeAnimation, slideAnimation } from '../config/motion';
 import { AIPicker, ColorPicker, FilePicker, CustomButton, Tab } from '../components';
+import downloadImg from "../assets/download.png";
+import github from "../assets/github.png";
 
 const Customizer = () => {
     const snap = useSnapshot(state);
@@ -89,7 +91,10 @@ const Customizer = () => {
         }
     };
     
-    
+    const handleRedirectToGithub = () => {
+        const url = "https://github.com/hitesh-mulwani/3d-Tshirt-Studio";
+        window.open(url, "_blank");
+      };
     
     const handleActiveFilterTab = (tabName) => {
         switch (tabName) {
@@ -160,6 +165,24 @@ const Customizer = () => {
                                     handleClick={() => handleActiveFilterTab(tab.name)}
                                 />
                             ))}
+                            <Tab
+                                key="download-btn"
+                                isFilterTab
+                                tab={{
+                                    name: "Download",
+                                    icon: downloadImg,
+                                }}
+                                handleClick={() => downloadCanvasToImage()}
+                            />
+                            <Tab
+                                key="github-btn"
+                                isFilterTab
+                                tab={{
+                                    name: "github",
+                                    icon: github,
+                                }}
+                                handleClick={handleRedirectToGithub}
+                            />
                         </motion.div>
 
                         {generatingImg && <div className="loading">Generating Image...</div>}
