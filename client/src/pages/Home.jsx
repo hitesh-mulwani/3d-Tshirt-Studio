@@ -16,11 +16,7 @@ const Home = () => {
       {snap.intro && (
         <motion.section className='home' {...slideAnimation("left")}>
           <motion.header {...slideAnimation("down")}>
-            <img 
-              src='./threejs.png' 
-              alt='logo' 
-              className='w-8 h-8 object-contain' 
-            />
+            <p className='text-xl italic font-bold underline text-gray-900'>Powered by AI</p>
           </motion.header>
 
           <motion.div className='home-content' {...headContainerAnimation}>
