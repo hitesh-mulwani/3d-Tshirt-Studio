@@ -8,7 +8,7 @@ import { fadeAnimation, slideAnimation } from '../config/motion';
 import { AIPicker, ColorPicker, FilePicker, CustomButton, Tab } from '../components';
 import downloadImg from "../assets/download.png";
 import github from "../assets/github.png";
-import storeIcon from "../assets/store.jpg";
+import storeIcon from "../assets/store.png";
 
 
 const Customizer = () => {
