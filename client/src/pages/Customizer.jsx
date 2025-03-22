@@ -8,6 +8,8 @@ import { fadeAnimation, slideAnimation } from '../config/motion';
 import { AIPicker, ColorPicker, FilePicker, CustomButton, Tab } from '../components';
 import downloadImg from "../assets/download.png";
 import github from "../assets/github.png";
+import storeIcon from "../assets/store.jpg";
+
 
 const Customizer = () => {
     const snap = useSnapshot(state);
@@ -94,7 +96,12 @@ const Customizer = () => {
     const handleRedirectToGithub = () => {
         const url = "https://github.com/hitesh-mulwani/3d-Tshirt-Studio";
         window.open(url, "_blank");
-      };
+    };
+    
+    const handleRedirectToStore = () => {
+        window.open("https://3d-tshirt-studio.vercel.app/tshirtStore.html", "_blank");
+    };
+    
     
     const handleActiveFilterTab = (tabName) => {
         switch (tabName) {
@@ -183,6 +190,16 @@ const Customizer = () => {
                                 }}
                                 handleClick={handleRedirectToGithub}
                             />
+                            <Tab
+                                key="store-btn"
+                                isFilterTab
+                                    tab={{
+                                        name: "Store",
+                                        icon: storeIcon,
+                                    }}
+                                handleClick={handleRedirectToStore}
+                            />
+
                         </motion.div>
 
                         {generatingImg && <div className="loading">Generating Image...</div>}
