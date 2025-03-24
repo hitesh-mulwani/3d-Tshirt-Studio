@@ -153,13 +153,14 @@ body{
   padding-top: 60px;
 }
 .heading{
+  display: flex;
+  justify-content: center;
   font-family: Arial;
   font-style: italic;
   font-size: large;
   font-weight:600;
   margin-top: 5px;
   margin-bottom: 20px;
-  padding-left: 310px;
 }
 .ai-menu{
   position: relative;
@@ -219,4 +220,83 @@ body{
   left: -20px;
   padding: 3px 6px;
   border-radius: 80%;
+}
+
+@media (max-width: 1200px) {
+  .grid {
+    grid-template-columns: 1fr 1fr 1fr;
+    row-gap: 120px;
+  }
+}
+
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+    row-gap: 130px;
+  }
+  .heading {
+    font-size: medium;
+  }
+  .card {
+    width: 280px;
+    height: 330px;
+    margin-left: 38px;
+  }
+  .blur {
+    bottom: -100px;
+  }
+  .left-section{
+    gap: 0px;
+  }
+}
+
+@media (max-width: 650px) {
+  .grid {
+    grid-template-columns: 1fr;
+    row-gap: 120px;
+  }
+  .card{
+    margin-left: 50px;
+  }
+  .heading {
+    font-size: small;
+  }
+  .mid-section {
+    display: none;
+  }
+  .right-section {
+    width: auto;
+    gap: 15px;
+  }
+  .header {
+    height: 50px;
+  }
+  .left-section div {
+    font-size: small;
+    gap: 0px;
+  }
+}
+
+@media (max-width: 480px) {
+  .card {
+    width: 250px;
+    height: 300px;
+  }
+  .blur {
+    bottom: -90px;
+  }
+  .blur p {
+    font-size: medium;
+  }
+  .button {
+    padding: 4px 15px;
+    font-size: medium;
+  }
+  .price {
+    font-size: 12px;
+  }
+  body {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
 }
