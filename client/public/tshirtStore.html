@@ -2,9 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <link rel="icon" type="image/png" href="../src/assets/store.png" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AI TSHIRT STORE</title>
+  <title>clothing card</title>
   <link rel="stylesheet" href="tshirtStore.css">
 </head>
 <body>
@@ -29,8 +28,8 @@
     <div class="right-section">
       <div class="add-to-cart">
         <img src="cart.svg" class="cart-img">
-        <div class="cart-tooltip">Go to Cart</div>
-        <div class="cart-items">4</div>
+        <div class="cart-tooltip">Cart Items</div>
+        <div class="cart-items" id="cart-item-count">0</div>
       </div >
     </div>
   </div>
@@ -45,7 +44,7 @@
       <div class="price">199 $</div>
       <div class="blur">
         <p><strong>Sunset Fade</strong>– 🌅 <i>"Feel the Sunset Vibes!"</i></p>
-        <button class="button">Add to Cart</button>
+        <button class="button" onclick="addItem();">Add to Cart</button>
       </div>
     </div>
 
@@ -54,7 +53,7 @@
       <div class="price">199 $</div>
       <div class="blur">
         <p><strong>Cosmic Swirl</strong>– 🌌 <i>"Wear the Universe!"</i></p>
-        <button class="button">Add to Cart</button>
+        <button class="button" onclick="addItem();">Add to Cart</button>
       </div>
     </div>
 
@@ -63,7 +62,7 @@
       <div class="price">199 $</div>
       <div class="blur">
         <p><strong>Heartbeats</strong>– 💖 <i>"Spread Love in Style!"</i></p>
-        <button class="button">Add to Cart</button>
+        <button class="button" onclick="addItem();">Add to Cart</button>
       </div>
     </div>
 
@@ -72,7 +71,7 @@
       <div class="price">199 $</div>
       <div class="blur">
         <p><strong>Pharaoh’s Legacy</strong>– 🏺 <i>"Unleash the Ancient Mystery!"</i></p>
-        <button class="button">Add to Cart</button>
+        <button class="button" onclick="addItem();">Add to Cart</button>
       </div>
     </div>
 
@@ -81,7 +80,7 @@
       <div class="price">199 $</div>
       <div class="blur">
         <p><strong>Tropical Bliss</strong>– 🌴 <i>"Vacay Mode: ON!"</i></p>
-        <button class="button">Add to Cart</button>
+        <button class="button" onclick="addItem();">Add to Cart</button>
       </div>
     </div>
 
@@ -90,7 +89,7 @@
       <div class="price">199 $</div>
       <div class="blur">
         <p><strong>Samurai Spirit</strong>– ⚔️ <i>"Embrace the Warrior Within!"</i></p>
-        <button class="button">Add to Cart</button>
+        <button class="button" onclick="addItem();">Add to Cart</button>
       </div>
     </div>
 
@@ -99,7 +98,7 @@
       <div class="price">199 $</div>
       <div class="blur">
         <p><strong>Urban Edge</strong>– 🎭 <i>"Minimalist. Modern. Bold."</i></p>
-        <button class="button">Add to Cart</button>
+        <button class="button" onclick="addItem();">Add to Cart</button>
       </div>
     </div>
 
@@ -108,9 +107,20 @@
       <div class="price">199 $</div>
       <div class="blur">
         <p><strong>Matrix Code</strong>– 💾 <i>Step into the Future!"</i></p>
-        <button class="button">Add to Cart</button>
+        <button class="button" onclick="addItem();">Add to Cart</button>
       </div>
     </div>
   </div>
+  <script>
+    let cartItemCount=0;
+    function updateItemCount(){
+      document.getElementById('cart-item-count').textContent = cartItemCount;
+    }
+    function addItem(){
+      cartItemCount+=1;
+      updateItemCount();
+    }
+    updateItemCount();  
+  </script>
 </body>
 </html>
