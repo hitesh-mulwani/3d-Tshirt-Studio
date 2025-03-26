@@ -44,7 +44,15 @@
       <div class="price">199 $</div>
       <div class="blur">
         <p><strong>Sunset Fade</strong>– 🌅 <i>"Feel the Sunset Vibes!"</i></p>
-        <button class="button" onclick="addItem();">Add to Cart</button>
+        <div class="add-remove-cart">
+          <button class="button" onclick="addItem();">Add to Cart</button>
+          <button class="rm-button"
+            onclick="removeItem();"
+          >
+            <img src="removeCart.jpg" class="rm-icon">
+          </button>
+        </div>
+
       </div>
     </div>
 
@@ -53,7 +61,12 @@
       <div class="price">199 $</div>
       <div class="blur">
         <p><strong>Cosmic Swirl</strong>– 🌌 <i>"Wear the Universe!"</i></p>
-        <button class="button" onclick="addItem();">Add to Cart</button>
+        <div class="add-remove-cart">
+          <button class="button" onclick="addItem();">Add to Cart</button>
+          <button class="rm-button" onclick="removeItem()";>
+            <img src="removeCart.jpg" class="rm-icon">
+          </button>
+        </div>
       </div>
     </div>
 
@@ -62,7 +75,12 @@
       <div class="price">199 $</div>
       <div class="blur">
         <p><strong>Heartbeats</strong>– 💖 <i>"Spread Love in Style!"</i></p>
-        <button class="button" onclick="addItem();">Add to Cart</button>
+        <div class="add-remove-cart">
+          <button class="button" onclick="addItem();">Add to Cart</button>
+          <button class="rm-button" onclick="removeItem()";>
+            <img src="removeCart.jpg" class="rm-icon">
+          </button>
+        </div>
       </div>
     </div>
 
@@ -71,7 +89,12 @@
       <div class="price">199 $</div>
       <div class="blur">
         <p><strong>Pharaoh’s Legacy</strong>– 🏺 <i>"Unleash the Ancient Mystery!"</i></p>
-        <button class="button" onclick="addItem();">Add to Cart</button>
+        <div class="add-remove-cart">
+          <button class="button" onclick="addItem();">Add to Cart</button>
+          <button class="rm-button" onclick="removeItem()";>
+            <img src="removeCart.jpg" class="rm-icon">
+          </button>
+        </div>
       </div>
     </div>
 
@@ -80,7 +103,12 @@
       <div class="price">199 $</div>
       <div class="blur">
         <p><strong>Tropical Bliss</strong>– 🌴 <i>"Vacay Mode: ON!"</i></p>
-        <button class="button" onclick="addItem();">Add to Cart</button>
+        <div class="add-remove-cart">
+          <button class="button" onclick="addItem();">Add to Cart</button>
+          <button class="rm-button" onclick="removeItem()";>
+            <img src="removeCart.jpg" class="rm-icon">
+          </button>
+        </div>
       </div>
     </div>
 
@@ -89,7 +117,12 @@
       <div class="price">199 $</div>
       <div class="blur">
         <p><strong>Samurai Spirit</strong>– ⚔️ <i>"Embrace the Warrior Within!"</i></p>
-        <button class="button" onclick="addItem();">Add to Cart</button>
+        <div class="add-remove-cart">
+          <button class="button" onclick="addItem();">Add to Cart</button>
+          <button class="rm-button" onclick="removeItem()";>
+            <img src="removeCart.jpg" class="rm-icon">
+          </button>
+        </div>
       </div>
     </div>
 
@@ -98,7 +131,12 @@
       <div class="price">199 $</div>
       <div class="blur">
         <p><strong>Urban Edge</strong>– 🎭 <i>"Minimalist. Modern. Bold."</i></p>
-        <button class="button" onclick="addItem();">Add to Cart</button>
+        <div class="add-remove-cart">
+          <button class="button" onclick="addItem();">Add to Cart</button>
+          <button class="rm-button" onclick="removeItem()";>
+            <img src="removeCart.jpg" class="rm-icon">
+          </button>
+        </div>
       </div>
     </div>
 
@@ -107,7 +145,12 @@
       <div class="price">199 $</div>
       <div class="blur">
         <p><strong>Matrix Code</strong>– 💾 <i>Step into the Future!"</i></p>
-        <button class="button" onclick="addItem();">Add to Cart</button>
+        <div class="add-remove-cart">
+          <button class="button" onclick="addItem();">Add to Cart</button>
+          <button class="rm-button" onclick="removeItem();">
+            <img src="removeCart.jpg" class="rm-icon">
+          </button>
+        </div>
       </div>
     </div>
   </div>
@@ -119,6 +162,12 @@
     function addItem(){
       cartItemCount+=1;
       updateItemCount();
+    }
+    function removeItem(){
+      if(cartItemCount >=1){
+        cartItemCount-=1;
+      updateItemCount();
+      }
     }
     updateItemCount();  
   </script>
