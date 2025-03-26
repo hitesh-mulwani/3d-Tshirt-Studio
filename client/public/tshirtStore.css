@@ -1,6 +1,7 @@
 .header{
   display: flex;
   flex-direction: row;
+  align-items: center;
   justify-content: space-between;
   height: 55px;
   border-bottom-width: 1px;
@@ -267,7 +268,7 @@ body{
     margin-left: 38px;
   }
   .blur {
-    bottom: -100px;
+    bottom: -103px;
   }
   .left-section{
     gap: 0px;
@@ -293,11 +294,14 @@ body{
     gap: 15px;
   }
   .header {
-    height: 50px;
+    height: 55px;
   }
   .left-section div {
     font-size: small;
     gap: 0px;
+  }
+  .blur{
+    padding: 6px 10px;
   }
 }
 
