@@ -16,18 +16,18 @@ const Home = () => {
       {snap.intro && (
         <motion.section className='home' {...slideAnimation("left")}>
           <motion.header {...slideAnimation("down")}>
-            <p className='text-xl italic font-bold underline text-gray-900'>Powered by AI</p>
+            <p className='text-lg md:text-xl italic font-bold underline text-gray-900'>Powered by AI</p>
           </motion.header>
 
           <motion.div className='home-content' {...headContainerAnimation}>
             <motion.div {...headTextAnimation}>
               <p className='head-text'>
-              TSHIRT<br className='xl:block hidden'/>STUDIO
+              TSHIRT<br className='lg:block hidden'/> STUDIO
               </p>
             </motion.div>
 
             <motion.div {...headContentAnimation} className='flex flex-col gap-5'>
-              <p className='max-w-md font-normal text-gray-900 text-base'>
+              <p className='home-description'>
               Design your perfect shirt with our <strong>3D customization tool:</strong> choose <strong>colors</strong>, upload <strong>logos</strong> and <strong>designs</strong>, or let <strong>AI</strong> create unique designs and logos just for you!
               </p>
 
@@ -35,7 +35,7 @@ const Home = () => {
                 type="filled"
                 title="Customize It"
                 handleClick={()=> state.intro = false}
-                customStyles="w-fit px-4 py-2.5 font-bold text-sm"
+                customStyles="w-full w-fit py-2.5 px-4  font-bold text-sm"
               />
             </motion.div>
 
