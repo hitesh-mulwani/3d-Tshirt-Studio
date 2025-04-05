@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>clothing card</title>
+  <title>AI T-Shirt Store</title>
   <link rel="stylesheet" href="tshirtStore.css">
 </head>
 <body>
@@ -154,22 +154,30 @@
       </div>
     </div>
   </div>
+  
   <script>
-    let cartItemCount=0;
-    function updateItemCount(){
-      document.getElementById('cart-item-count').textContent = cartItemCount;
+    // Initialize cart count from localStorage or default to 0
+    let cartItemCount = parseInt(localStorage.getItem('cartItemCount')) || 0;
+    
+    function updateItemCount() {
+        document.getElementById('cart-item-count').textContent = cartItemCount;
+        localStorage.setItem('cartItemCount', cartItemCount.toString());
     }
-    function addItem(){
-      cartItemCount+=1;
-      updateItemCount();
+    
+    function addItem() {
+        cartItemCount += 1;
+        updateItemCount();
     }
-    function removeItem(){
-      if(cartItemCount >=1){
-        cartItemCount-=1;
-      updateItemCount();
-      }
+    
+    function removeItem() {
+        if (cartItemCount >= 1) {
+            cartItemCount -= 1;
+            updateItemCount();
+        }
     }
-    updateItemCount();  
-  </script>
+    
+    // Initialize on page load
+    updateItemCount();
+</script>
 </body>
 </html>
