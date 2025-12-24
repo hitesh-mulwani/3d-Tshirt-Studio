@@ -5,7 +5,7 @@ import state from '../store';
 import { downloadCanvasToImage, reader } from '../config/helpers';
 import { EditorTabs, FilterTabs, DecalTypes } from '../config/constants';
 import { fadeAnimation, slideAnimation } from '../config/motion';
-import { AIPicker, ColorPicker, FilePicker, CustomButton, Tab } from '../components';
+import { ColorPicker, FilePicker, CustomButton, Tab } from '../components';
 import downloadImg from "../assets/download.png";
 import github from "../assets/github.png";
 import storeIcon from "../assets/store.png";
@@ -24,13 +24,6 @@ const Customizer = () => {
 
     const generateTabContent = () => {
         switch (activeEditorTab) {
-            case "aipicker":
-                return <AIPicker 
-                    prompt={prompt}
-                    setPrompt={setPrompt}
-                    generatingImg={generatingImg}
-                    handleSubmit={handleSubmit}
-                />;
             case "colorpicker":
                 return <ColorPicker />;
             case "filepicker":
@@ -44,42 +37,6 @@ const Customizer = () => {
         }
     }
 
-    const handleSubmit = async (type) => {
-        if (!prompt) {
-            return alert("Please enter a prompt");
-        }
-    
-        try {
-            setGeneratingImg(true);
-    
-            const response = await fetch('https://threed-tshirt-studio-s2uy.onrender.com/api/v1/dalle', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({ prompt }),
-            });
-    
-            const data = await response.json();
-    
-            // Check if the image data exists in the response
-            if (data && data.photo) {
-                const imageData = data.photo;  // This should be the base64 string
-                if (!imageData || imageData === 'undefined') {
-                    throw new Error("Image data is undefined or empty");
-                }
-                // Proceed to use the image data
-                handleDecals(type, imageData);
-            } else {
-                throw new Error("No image data returned from API");
-            }
-        } catch (error) {
-            alert(`Error: ${error.message}`);
-        } finally {
-            setGeneratingImg(false);
-            setActiveEditorTab("");
-        }
-    };
     
     const handleDecals = (type, result) => {
         const decalType = DecalTypes[type];

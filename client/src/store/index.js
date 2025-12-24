@@ -6,6 +6,6 @@ const state= proxy({
     isLogoTexture: true,
     isFullTexture: false,
     logoDecal: './apple.png',
-    fullDecal: './appleGradient.png',
+    fullDecal: './t3.png',
 });
 export default state;

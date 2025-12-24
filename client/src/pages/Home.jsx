@@ -16,7 +16,7 @@ const Home = () => {
       {snap.intro && (
         <motion.section className='home' {...slideAnimation("left")}>
           <motion.header {...slideAnimation("down")}>
-            <p className='text-lg md:text-xl italic font-bold underline text-gray-900'>Powered by AI</p>
+            <p className='text-lg md:text-xl italic font-bold underline text-gray-900'>3D</p>
           </motion.header>
 
           <motion.div className='home-content' {...headContainerAnimation}>
@@ -28,7 +28,7 @@ const Home = () => {
 
             <motion.div {...headContentAnimation} className='flex flex-col gap-5'>
               <p className='home-description'>
-              Design your perfect shirt with our <strong>3D customization tool:</strong> choose <strong>colors</strong>, upload <strong>logos</strong> and <strong>designs</strong>, or let <strong>AI</strong> create unique designs and logos just for you!
+              Design your perfect shirt with our <strong>3D customization tool:</strong> choose <strong>colors</strong>, upload <strong>logos</strong> and <strong>designs</strong>, to create unique designs and logos just for you!
               </p>
 
               <CustomButton 
