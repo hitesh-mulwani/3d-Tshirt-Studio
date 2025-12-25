@@ -3,9 +3,9 @@ import { proxy } from "valtio";
 const state= proxy({
     intro: true,
     color: '#4A4A4A',
-    isLogoTexture: true,
+    isLogoTexture: false,
     isFullTexture: false,
-    logoDecal: './react.png',
-    fullDecal: './gradient.png',
+    logoDecal: './apple.png',
+    fullDecal: './grid-black.png',
 });
 export default state;
